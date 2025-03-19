@@ -63,4 +63,9 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
     kapt(libs.hilt.compiler)
+
+    // Retrofit
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.retrofit)
 }
