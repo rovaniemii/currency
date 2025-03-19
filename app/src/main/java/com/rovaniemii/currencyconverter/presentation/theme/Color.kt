@@ -1,4 +1,4 @@
-package com.rovaniemii.currencyconverter.ui.theme
+package com.rovaniemii.currencyconverter.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
