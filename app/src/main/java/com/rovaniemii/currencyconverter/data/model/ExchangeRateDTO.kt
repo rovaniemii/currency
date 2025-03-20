@@ -16,5 +16,5 @@ data class ExchangeRateDTO(
 
     // 국가/통화명
     @SerializedName("cur_nm")
-    val curNm: String? = null,
+    val curName: String? = null,
 )

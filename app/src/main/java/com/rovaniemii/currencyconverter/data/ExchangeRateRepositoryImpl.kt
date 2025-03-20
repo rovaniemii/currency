@@ -19,12 +19,14 @@ class ExchangeRateRepositoryImpl @Inject constructor(
 
             if (response.isSuccessful) {
                 response.body()?.let { dto ->
-                    val exchangeRateList = dto.map {
-                        ExchangeRate(
-                            currencyCode = it.currencyCode,
-                            dealBaseRate = it.dealBaseRate?.toDoubleOrNull()
-                        )
-                    }
+                    val exchangeRateList = dto
+                        .map {
+                            ExchangeRate(
+                                currencyCode = it.currencyCode ?: "",
+                                dealBaseRate = it.dealBaseRate?.toDouble() ?: 0.0,
+                                currencyName = it.curName ?: "",
+                            )
+                        }
                     emit(Result.success(exchangeRateList))
                 } ?: emit(Result.failure(Exception("Empty response body")))
             } else {
